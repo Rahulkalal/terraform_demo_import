@@ -1,15 +1,4 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
 
-provider "aws" {
-  region = "us-east-1"  # Set your region here
-}
 
 # Placeholder for the EC2 instance to be imported
 resource "aws_instance" "my_ec2_instance" {
