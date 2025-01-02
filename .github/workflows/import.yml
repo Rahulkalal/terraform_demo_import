@@ -57,16 +57,3 @@ jobs:
         run: terraform show
         working-directory: ./import  
 
-      # Step 8: Upload terraform.tfstate as artifact
-      - name: 'Upload terraform.tfstate as artifact'
-        uses: actions/upload-artifact@v4.5.0
-        with:
-          name: terraform-state
-          path: ./import/terraform.tfstate  # Path to the state file in the import directory
-
-      # Step 9: Download the artifact 
-      - name: 'Download terraform.tfstate artifact'
-        uses: actions/download-artifact@v4.1.8
-        with:
-          name: terraform-state
-          path: ./downloaded-artifacts
